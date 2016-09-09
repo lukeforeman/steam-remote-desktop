@@ -25,6 +25,7 @@ namespace Steam_In_Home_Streaming_Desktop
 
             notifyIcon1 = new NotifyIcon();
             notifyIcon1.Icon = this.Icon;
+            notifyIcon1.Click += new EventHandler(menuItem1_Click);
             notifyIcon1.ContextMenu = contextMenu1;
         }
 
@@ -35,6 +36,8 @@ namespace Steam_In_Home_Streaming_Desktop
             Application.DoEvents();
             this.WindowState = FormWindowState.Minimized;
             this.Icon = SteamInHomeStreamingRemoteDesktop.Properties.Resources.SIHS_End_Remote_Desktop_Logo;
+            System.Threading.Thread.Sleep(100);
+            System.Diagnostics.Process.Start("altf4.exe");
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
